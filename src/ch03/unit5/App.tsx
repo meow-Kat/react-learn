@@ -3,13 +3,16 @@ import React from 'react'
 // 1. props state
 // 2. 生命週期
 // 3. this
+// 這個檔案是比較舊的技術 現今大多以 hook 來實作
 
 type BtnProps = {
     clickHandler: () => void
 }
 type BtnState = {}
 
+// 使用 react component
 class Btn extends React.Component<BtnProps,BtnState>{
+    // constructor 內要寫一個 super 函式
     constructor( props: BtnProps ){
         super(props)
     }
