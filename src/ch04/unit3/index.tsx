@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-// // 1. useState 基本認識
+// // 1. useState 基本認識，狀態變化
 // const App: React.FC = () => {
 
 //   // 沒有涉及畫面更新
 //   // let counter = 0
 
-//   // 有涉及畫面更新           // 這邊會自動抓類型，如果需要改變類型，使用泛型 useState<number | null>()
+//   // 有涉及畫面更新           // 這邊會自動抓類型，如果需要改變類型，使用泛型 useState<number | null>(null) 或 useState<number>() 這裡推斷為可能 undifinded | number
 //   const [counter, SetCounter] = useState(0)
 
 //   function counterHandler() {
@@ -26,7 +26,7 @@ import { useState } from 'react'
 
 // export default App
 
-// // 2.
+// // 2. batching update 一起渲染
 // const Parent: React.FC = () => {
 //   let [count, setCount] = useState(0)
 //   return (

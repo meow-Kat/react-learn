@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components'
 
-type BtnType = {colorStatus: boolean}
+type BtnType = { colorStatus: boolean }
 
+// CSS in jsx
 const Button = styled.button<BtnType>`
     background: transparent;
     border-radius: 3px;

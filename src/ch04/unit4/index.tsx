@@ -5,8 +5,9 @@ const App:React.FC = () => {
   // 1. mount
   // ( callback function, 陣列 )
   // useEffect(() => {
+  //   通常來說這裡都會放 fetch 來的資料然後重新被選染
   //   console.log(123);
-  // } , []) // 後端資料放這個陣列執行一次
+  // } , []) // 這個陣列執行一次(也就是預設出現的值)，只要這個資料有變化陣列內的東西就會被重新渲染
 
   const [counter, setCounter] = useState(0)
   const [text, setText] = useState('偶數')
@@ -19,7 +20,7 @@ const App:React.FC = () => {
     }else{
       setText('奇數')
     }
-  },[counter]) // 監聽 counter 變化
+  },[counter]) // 監聽 counter 變化，配合 useState
 
   // 避免一直重複渲染
   // setText('xxx') // 這邊跟第 12 行有關

@@ -22,6 +22,7 @@ function useGetTotalScore(boardName: string){
   // 變動分數
   // 只接受兩個參數 ( callback function () => {} , [各種不同的變數 , ...etc] )，陣列內的數值變動的話裡面 useEffect 就會重新執行一次
   useEffect(() => {
+    // 加總總分
     const currentScore = getCurrentScore() + getScoreByBoardName(boardName)
     setScore(currentScore)
   },[])
