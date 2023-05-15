@@ -58,6 +58,7 @@ const App:React.FC = () => {
       error === null ? <p style={{ color:'green' }}>資料獲取成功</p> : <p style={{ color:'red' }}>資料獲取失敗</p>
     }
     {
+      // 如果是 null 不 return 任何組件
       loading ? <p>loading</p> : null
     }
   </>

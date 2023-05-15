@@ -34,18 +34,22 @@ function useFetchApi() {
 
   }
 
+  // 必須要使用 useEffect 去 fetchData，如果沒有 useEffect fetchData 會產生渲染的內容(需要設定 error 或 loading 等等)，進而重新選染造成無窮迴圈
   useEffect(() => {
     fetchData(postId)
   },[postId])
 
-  // 被推斷陣列順序 ， 加入 as const 可以把陣列的位置變成 return 陣列後的位置
+  // 被推斷陣列順序，加入 as const 變成元組 可以把陣列的位置變成 return 陣列後的位置
   return [data,loading,error,setPostId] as const
+  // 如果回傳物件可以不用 as const 但不符合 react 規則
+  // return { data,loading,error,setPostId }
 }
 
 const App:React.FC = () => {
 
   const [data,loading,error,setPostId] = useFetchApi()
-
+  // 如果回傳物件 
+  // const { data,loading,error,setPostId } = useFetchApi()
 
   function clickHandler(id: number) {
     setPostId(id)
